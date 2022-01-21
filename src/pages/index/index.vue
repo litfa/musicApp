@@ -1,17 +1,16 @@
 <!--
- * @Author: your name
+ * @Author: litfa
  * @Date: 2022-01-19 19:19:53
- * @LastEditTime: 2022-01-19 19:47:41
- * @LastEditors: Please set LastEditors
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: \music-app\src\pages\index\index.vue
+ * @LastEditTime: 2022-01-21 16:22:22
+ * @LastEditors: litfa
+ * @Description: 首页
+ * @FilePath: /music-app/src/pages/index/index.vue
+ *
 -->
 <template>
   <div>
-    <!-- <u-action-sheet :list="list" v-model="show">111</u-action-sheet> -->
-    <u-button text="月落">111</u-button>
-    <u-button type="primary" text="确定"></u-button>
-    <u-button type="primary" size="small" text="大小尺寸"></u-button>
+    <top-bar></top-bar>
+    <index-card title="概念新歌速递" subtitle="副·标题"> 插槽内容 </index-card>
   </div>
 </template>
 
