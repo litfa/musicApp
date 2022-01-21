@@ -30,7 +30,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'prefer-const': 2,
     quotes: [2, 'single'], // 单引号
-    // semi: 0, // 不强制使用分号
+    'semi': ['error', 'never'], // 不强制使用分号
     'no-control-regex': 2, // 禁止在正则表达式中使用控制字符 ：new RegExp("\x1f")
     // 'linebreak-style': [0, 'error', 'windows'], // 强制使用一致的换行风格
     'array-bracket-spacing': [2, 'never'], // 指定数组的元素之间要以空格隔开(,后面)
@@ -78,5 +78,6 @@ module.exports = {
     'object-shorthand': 0, // 要求或禁止对象字面量中方法和属性使用简写语法
     'prefer-template': 0, // 要求使用模板字面量而非字符串连接
     // 'prettier/prettier': 'error',
+    'vue/multi-word-component-names': 0
   },
-};
+}
