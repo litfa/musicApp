@@ -19,6 +19,9 @@ module.exports = {
     commonjs: true,
     jquery: true,
   },
+  globals: {
+    'uni': 'readonly'
+  },
   // required to lint files
   plugins: ['vue', 'prettier'],
   // add your custom rules here
