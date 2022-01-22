@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-19 19:19:53
- * @LastEditTime: 2022-01-21 16:22:22
+ * @LastEditTime: 2022-01-21 16:38:40
  * @LastEditors: litfa
  * @Description: 首页
  * @FilePath: /music-app/src/pages/index/index.vue
@@ -36,3 +36,11 @@ export default {
   },
 }
 </script>
+
+<style lang="less">
+.top-bar {
+  position: sticky;
+  top: 0px;
+  margin-bottom: 10rpx;
+}
+</style>

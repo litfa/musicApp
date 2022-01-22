@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-21 14:57:09
- * @LastEditTime: 2022-01-21 15:40:21
+ * @LastEditTime: 2022-01-21 16:35:53
  * @LastEditors: litfa
  * @Description: topBar
  * @FilePath: /music-app/src/components/top-bar/top-bar.vue
@@ -42,13 +42,16 @@ export default {
 
 <style lang="less">
 .top-bar {
-  height: 75rpx;
+  height: 90rpx;
   background-color: #f3f3f3;
   display: flex;
   justify-content: space-between;
-  padding: 0 10rpx;
+  align-items: center;
+  padding: 0rpx 10rpx;
   box-sizing: border-box;
   .nav {
+    width: 235rpx;
+    height: 100%;
     display: flex;
     image {
       height: 100%;

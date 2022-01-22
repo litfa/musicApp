@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-21 14:46:24
- * @LastEditTime: 2022-01-21 15:40:04
+ * @LastEditTime: 2022-01-21 16:33:00
  * @LastEditors: litfa
  * @Description: 搜索组件
  * @FilePath: /music-app/src/components/search/search.vue
@@ -58,7 +58,8 @@ export default {
     border-radius: 500rpx;
     background-color: #eeeeee;
     color: #b6b6b6;
-    box-shadow: 0px 0px 5px 5px rgba(173, 173, 173, 0.479) inset;
+    box-shadow: 0px 0px 5px 5px rgba(218, 218, 218, 0.479) inset;
+    font-size: 20rpx;
   }
 }
 </style>
