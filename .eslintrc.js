@@ -69,7 +69,7 @@ module.exports = {
     // // ES6.相关 //
     // //
     'arrow-body-style': 2, // 要求箭头函数体使用大括号
-    'arrow-parens': ['error', 'as-needed'], // 要求箭头函数的参数可以省略圆括号时必须省略，配合prettier
+    // 'arrow-parens': ['error', 'as-needed'], // 要求箭头函数的参数可以省略圆括号时必须省略，配合prettier
     'arrow-spacing': [2, { before: true, after: true }],
     'constructor-super': 0, // 强制在子类构造函数中用super()调用父类构造函数，TypeScrip的编译器也会提示
     'no-const-assign': 2, // 禁止修改 const 声明的变量
