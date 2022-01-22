@@ -1168,6 +1168,11 @@
     merge "^2.1.1"
     strip-json-comments "^2.0.1"
 
+"@escook/request-miniprogram@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.npmmirror.com/@escook/request-miniprogram/download/@escook/request-miniprogram-0.2.1.tgz#c3b13249f5a94601f2949f4d68245df9a5683819"
+  integrity sha512-ueWV5YsaEm/ycQZuEjMiA88GFMhfBQSjy9GrP9omy4xAQajkGTbYIlnhzsDfWzRPmRC1fKmAiKMrCVcgS+SHcQ==
+
 "@eslint/eslintrc@^1.0.5":
   version "1.0.5"
   resolved "https://registry.npmmirror.com/@eslint/eslintrc/download/@eslint/eslintrc-1.0.5.tgz#33f1b838dbf1f923bfa517e008362b78ddbbf318"
