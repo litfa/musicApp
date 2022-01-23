@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-21 15:43:05
- * @LastEditTime: 2022-01-22 20:08:40
+ * @LastEditTime: 2022-01-23 16:33:54
  * @LastEditors: litfa
  * @Description: 首页卡片组件
  * @FilePath: /music-app/src/components/index-card/index-card.vue
@@ -79,6 +79,7 @@ export default {
   border-radius: 15rpx;
   padding: 1rpx 35rpx 0 35rpx;
   position: relative;
+  z-index: 1;
   .blurPicUrl {
     border-radius: 16rpx;
     background-color: rgb(105, 3, 100);

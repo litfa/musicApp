@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-21 14:57:09
- * @LastEditTime: 2022-01-21 16:35:53
+ * @LastEditTime: 2022-01-23 16:38:02
  * @LastEditors: litfa
  * @Description: topBar
  * @FilePath: /music-app/src/components/top-bar/top-bar.vue
@@ -40,7 +40,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .top-bar {
   height: 90rpx;
   background-color: #f3f3f3;

@@ -1,7 +1,7 @@
 /**
  * @Author: litfa
  * @Date: 2022-01-19 19:19:53
- * @LastEditTime: 2022-01-22 15:38:09
+ * @LastEditTime: 2022-01-23 15:57:30
  * @LastEditors: litfa
  * @Description: main
  * @FilePath: /music-app/src/main.js
@@ -23,6 +23,9 @@ $http.baseUrl = 'http://cloud-music.pl-fe.cn'
 uni.$http = $http
 // 如此配置即可
 uni.$u.config.unit = 'rpx'
+
+// 隐藏tabbar 使用自定义的
+uni.hideTabBar()
 
 Vue.config.productionTip = false
 
