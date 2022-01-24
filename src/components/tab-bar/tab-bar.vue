@@ -1,31 +1,62 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-23 15:48:35
- * @LastEditTime: 2022-01-23 16:46:41
+ * @LastEditTime: 2022-01-23 18:46:49
  * @LastEditors: litfa
  * @Description:
  * @FilePath: /music-app/src/components/tab-bar/tab-bar.vue
  *
 -->
+
 <template>
   <div class="tab-bar">
-    <div class="tab selected">
-      <image :src="require('@/static/tabbar-icon/index.png')" mode="widthFix" />
+    <div class="tab" :class="tabBar.now == 0 ? 'selected' : ''" @click="switchTab(list[0].pagePath, 0)">
+      <image :src="require(`@/static/tabbar-icon/index${tabBar.now == 0 ? '-1' : ''}.png`)" mode="widthFix" />
       <span>发现</span>
     </div>
-    <div class="tab">
-      <image :src="require('@/static/tabbar-icon/index.png')" mode="widthFix" />
+    <div class="tab" :class="tabBar.now == 1 ? 'selected' : ''" @click="switchTab(list[1].pagePath, 1)">
+      <image :src="require(`@/static/tabbar-icon/my${tabBar.now == 1 ? '-1' : ''}.png`)" mode="widthFix" />
       <span>我的</span>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 export default {
   props: {},
-  data: () => ({}),
-  computed: {},
-  methods: {},
+  data: () => ({
+    list: [
+      {
+        pagePath: 'pages/index/index',
+        text: '发现',
+        iconPath: 'static/tabbar-icon/index.png',
+        selectedIconPath: 'static/tabbar-icon/index-1.png',
+      },
+      {
+        pagePath: 'pages/my/my',
+        text: '我',
+        iconPath: 'static/tabbar-icon/my.png',
+        selectedIconPath: 'static/tabbar-icon/my-1.png',
+      },
+    ],
+  }),
+  computed: {
+    ...mapState(['tabBar']),
+  },
+
+  methods: {
+    ...mapMutations(['setTabBar']),
+    switchTab(to, index) {
+      console.log(to)
+      uni.switchTab({
+        url: '/' + to,
+      })
+      // console.log(this.setTabBar)
+      // console.log('tabbar', this.tabBar)
+      this.setTabBar(index)
+    },
+  },
   watch: {},
 
   // 组件周期函数--监听组件挂载完毕
@@ -73,6 +104,9 @@ export default {
     }
   }
   .selected span {
+    color: #000;
+  }
+  .tab[selected='true'] span {
     color: #000;
   }
 }

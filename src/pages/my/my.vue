@@ -1,9 +1,19 @@
+<!--
+ * @Author: litfa
+ * @Date: 2022-01-23 15:24:54
+ * @LastEditTime: 2022-01-23 18:12:15
+ * @LastEditors: litfa
+ * @Description: 我的
+ * @FilePath: /music-app/src/pages/my/my.vue
+ *
+-->
 <template>
-  <div class="my">my</div>
+  <div class="my">
+    <tab-bar></tab-bar>
+  </div>
 </template>
 
 <script>
-
 export default {
   components: {},
   data: () => ({}),
@@ -23,7 +33,7 @@ export default {
   onUnload() {},
   // 页面处理函数--监听用户下拉动作
   onPullDownRefresh() {
-    uni.stopPullDownRefresh();
+    uni.stopPullDownRefresh()
   },
   // 页面处理函数--监听用户上拉触底
   onReachBottom() {},
@@ -31,7 +41,7 @@ export default {
   /* onPageScroll(event) {}, */
   // 页面处理函数--用户点击右上角分享
   /* onShareAppMessage(options) {}, */
-};
+}
 </script>
 
 <style></style>

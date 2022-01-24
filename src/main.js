@@ -1,7 +1,7 @@
 /**
  * @Author: litfa
  * @Date: 2022-01-19 19:19:53
- * @LastEditTime: 2022-01-23 15:57:30
+ * @LastEditTime: 2022-01-23 16:50:54
  * @LastEditors: litfa
  * @Description: main
  * @FilePath: /music-app/src/main.js
@@ -13,6 +13,8 @@ import App from './App'
 import uView from 'uview-ui'
 // 按需导入 $http 对象
 import { $http } from '@escook/request-miniprogram'
+
+import store from './store'
 
 Vue.use(uView)
 
@@ -27,11 +29,13 @@ uni.$u.config.unit = 'rpx'
 // 隐藏tabbar 使用自定义的
 uni.hideTabBar()
 
+
 Vue.config.productionTip = false
 
 App.mpType = 'app'
 
 const app = new Vue({
+  store,
   ...App
 })
 app.$mount()
