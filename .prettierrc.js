@@ -1,3 +1,12 @@
+/**
+ * @Author: litfa
+ * @Date: 2022-01-26 16:36:11
+ * @LastEditTime: 2022-01-26 19:22:55
+ * @LastEditors: litfa
+ * @Description: 
+ * @FilePath: /music-app/.prettierrc.js
+ * @
+ */
 //配置 prettier  。prettierrc.js
 module.exports = {
   // 单行最大长度
@@ -5,9 +14,9 @@ module.exports = {
   // 设置编辑器每一个水平缩进的空格数
   tabWidth: 2,
   // 在句尾添加分号
-  semi: true,
+  // semi: true,
   // 使用单引号
-  // singleQuote: true,
+  singleQuote: true,
   jsxSingleQuote: true,
   // 在任何可能的多行中输入尾逗号。
   trailingComma: 'all',
