@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-19 19:19:53
- * @LastEditTime: 2022-01-23 16:34:12
+ * @LastEditTime: 2022-01-27 10:49:14
  * @LastEditors: litfa
  * @Description: 首页
  * @FilePath: /music-app/src/pages/index/index.vue
@@ -39,12 +39,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.top-bar {
-  position: sticky;
-  top: 0px;
-  z-index: 100;
-  margin-bottom: 10rpx;
-}
 .index {
   background-color: #f3f3f3;
 }

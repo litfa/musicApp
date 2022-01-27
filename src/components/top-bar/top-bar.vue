@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-21 14:57:09
- * @LastEditTime: 2022-01-23 16:38:02
+ * @LastEditTime: 2022-01-27 10:50:09
  * @LastEditors: litfa
  * @Description: topBar
  * @FilePath: /music-app/src/components/top-bar/top-bar.vue
@@ -10,8 +10,10 @@
 <template>
   <div class="top-bar">
     <view class="nav">
-      <image :src="require('@/static/image/fa_xian_1.png')" mode="aspectFit" />
-      <image :src="require('@/static/image/ding_yue_0.png')" mode="aspectFit" />
+      <image :src="require('@/static/image/fa_xian_1.png')"
+        mode="aspectFit" />
+      <image :src="require('@/static/image/ding_yue_0.png')"
+        mode="aspectFit" />
     </view>
     <search class="search"></search>
   </div>
@@ -42,6 +44,10 @@ export default {
 
 <style lang="less" scoped>
 .top-bar {
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  margin-bottom: 10rpx;
   height: 90rpx;
   background-color: #f3f3f3;
   display: flex;

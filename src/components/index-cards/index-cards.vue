@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-22 15:57:02
- * @LastEditTime: 2022-01-23 16:34:01
+ * @LastEditTime: 2022-01-27 10:47:23
  * @LastEditors: litfa
  * @Description: 所有卡片（在这里请求遍历）
  * @FilePath: /music-app/src/components/index-cards/index-cards.vue
@@ -10,28 +10,36 @@
 <template>
   <div class="index-cards">
     <!-- 新歌速递 -->
-    <index-card title="新歌速递" class="newMusic" :blurPicUrl="newMusic[0].album.blurPicUrl">
+    <index-card title="新歌速递" class="newMusic"
+      :blurPicUrl="newMusic[0].album.blurPicUrl">
       <div class="musics">
-        <div class="item" v-for="item in newMusic" :key="item.id">
-          <image :src="item.album.blurPicUrl" mode="widthFix" />
+        <div class="item" v-for="item in newMusic"
+          :key="item.id">
+          <image :src="item.album.blurPicUrl"
+            mode="widthFix" />
           <span class="name">{{ item.name }}</span>
-          <span class="author">{{ item.artists[0].name }}</span>
+          <span
+            class="author">{{ item.artists[0].name }}</span>
         </div>
       </div>
       <!-- 底部插槽 -->
       <template #bottom>
-        <span class="bottom"> ...{{ newMusicLength }}首</span>
+        <span class="bottom">
+          ...{{ newMusicLength }}首</span>
       </template>
     </index-card>
     <!-- 飙升帮 -->
-    <index-card title="热门音乐" :blurPicUrl="hotMusic[1].al.picUrl">
+    <index-card title="热门音乐"
+      :blurPicUrl="hotMusic[1].al.picUrl">
       <div class="hotMusic">
-        <div class="item" v-for="item in hotMusic" :key="item.id">
+        <div class="item" v-for="item in hotMusic"
+          :key="item.id">
           <image :src="item.al.picUrl" mode="heightFix" />
           <div class="info">
             <span class="name">{{ item.name }}</span>
             <span></span>
-            <span class="author">{{ item.ar[0].name }}</span>
+            <span
+              class="author">{{ item.ar[0].name }}</span>
           </div>
         </div>
       </div>
@@ -92,6 +100,8 @@ export default {
 
 <style lang="less" scoped>
 .index-cards {
+  // 预留 tabBar高度
+  margin-bottom: 190rpx;
   .musics {
     display: flex;
     justify-content: space-around;

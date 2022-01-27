@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-21 14:46:24
- * @LastEditTime: 2022-01-21 16:33:00
+ * @LastEditTime: 2022-01-27 10:42:52
  * @LastEditors: litfa
  * @Description: 搜索组件
  * @FilePath: /music-app/src/components/search/search.vue
@@ -9,7 +9,7 @@
 -->
 <template>
   <div class="search">
-    <navigator url="/subpkg/search/search" redirect>
+    <navigator url="/subpkg/search/search">
       <view class="input">
         <u-icon name="search" color="#b6b6b6"></u-icon>
         单曲/频道

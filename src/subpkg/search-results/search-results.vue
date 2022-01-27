@@ -1,19 +1,9 @@
-<!--
- * @Author: litfa
- * @Date: 2022-01-21 14:53:33
- * @LastEditTime: 2022-01-26 17:10:48
- * @LastEditors: litfa
- * @Description: 搜索页面
- * @FilePath: /music-app/src/subpkg/search/search.vue
- *
--->
 <template>
-  <div class="search">
-    <search-input></search-input>
-  </div>
+  <div class="search-results">search-results</div>
 </template>
 
 <script>
+
 export default {
   components: {},
   data: () => ({}),
@@ -33,7 +23,7 @@ export default {
   onUnload() {},
   // 页面处理函数--监听用户下拉动作
   onPullDownRefresh() {
-    uni.stopPullDownRefresh()
+    uni.stopPullDownRefresh();
   },
   // 页面处理函数--监听用户上拉触底
   onReachBottom() {},
@@ -41,7 +31,7 @@ export default {
   /* onPageScroll(event) {}, */
   // 页面处理函数--用户点击右上角分享
   /* onShareAppMessage(options) {}, */
-}
+};
 </script>
 
 <style></style>
