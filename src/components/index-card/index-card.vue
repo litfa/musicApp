@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-21 15:43:05
- * @LastEditTime: 2022-01-23 16:33:54
+ * @LastEditTime: 2022-01-29 19:40:28
  * @LastEditors: litfa
  * @Description: 首页卡片组件
  * @FilePath: /music-app/src/components/index-card/index-card.vue
@@ -9,7 +9,10 @@
 -->
 <template>
   <div class="index-card">
-    <div class="blurPicUrl" :style="{ backgroundImage: `url(${blurPicUrl});` }"></div>
+    <div class="blurPicUrl"
+      :style="{ backgroundImage: `url(${blurPicUrl});` }">
+      <span></span>
+    </div>
     <div class="subtitle">{{ subtitle }}</div>
     <!-- {{ blurPicUrl }} -->
     <div class="title">{{ title }}</div>
@@ -21,11 +24,14 @@
         <div class="tag-title"></div>
         <div class="tag-subtitle"></div>
       </div>
-      <div class="link" v-else-if="bottomView == 'link'"></div>
+      <div class="link" v-else-if="bottomView == 'link'">
+      </div>
       <span v-else>
         <slot name="bottom"></slot>
       </span>
-      <image class="play" :src="require('@/static/image/play.png')" mode="aspectFit" />
+      <image class="play"
+        :src="require('@/static/image/play.png')"
+        mode="aspectFit" />
     </div>
   </div>
 </template>
@@ -80,17 +86,29 @@ export default {
   padding: 1rpx 35rpx 0 35rpx;
   position: relative;
   z-index: 1;
+  overflow: hidden;
   .blurPicUrl {
     border-radius: 16rpx;
     background-color: rgb(105, 3, 100);
     background-size: cover;
-    filter: blur(1.5px);
+    filter: blur(2px);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
+    // position: relative;
+    // &::before {
+    span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(17, 23, 100, 0.37);
+      left: 0;
+      top: 0;
+      z-index: -0.5;
+    }
   }
   .subtitle {
     height: 28rpx;
