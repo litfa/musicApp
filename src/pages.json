@@ -16,24 +16,25 @@
 			}
 		}
 	],
-	// "tabBar": {
-	// 	"color": "#b7b7b7",
-	// 	"selectedColor": "#000",
-	// 	"list": [
-	// 		{
-	// 			"pagePath": "pages/index/index",
-	// 			"text": "发现",
-	// 			"iconPath": "static/tabbar-icon/index.png",
-	// 			"selectedIconPath": "static/tabbar-icon/index-1.png"
-	// 		},
-	// 		{
-	// 			"pagePath": "pages/my/my",
-	// 			"text": "我",
-	// 			"iconPath": "static/tabbar-icon/my.png",
-	// 			"selectedIconPath": "static/tabbar-icon/my-1.png"
-	// 		}
-	// 	]
-	// },
+	"tabBar": {
+		"color": "#b7b7b7",
+		"selectedColor": "#000",
+		"custom": true,
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "发现",
+				"iconPath": "static/tabbar-icon/index.png",
+				"selectedIconPath": "static/tabbar-icon/index-1.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我",
+				"iconPath": "static/tabbar-icon/my.png",
+				"selectedIconPath": "static/tabbar-icon/my-1.png"
+			}
+		]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
