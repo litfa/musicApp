@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-30 15:34:35
- * @LastEditTime: 2022-02-02 17:22:08
+ * @LastEditTime: 2022-02-02 17:40:10
  * @LastEditors: litfa
  * @Description: 音乐详情页
  * @FilePath: /music-app/src/subpkg/music-details/music-details.vue
@@ -25,7 +25,8 @@
       </div>
     </div>
     <div class="image">
-      <image :src="imgSrc" mode="widthFix" />
+      <image :src="imgSrc" mode="widthFix"
+        :class="playing ? '' : 'pause'" />
     </div>
     <div class="box"></div>
     <div class="progressBar">
@@ -193,8 +194,10 @@ export default {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      // transform: rotate(45deg);
-      animation: rotate 20s infinite linear;
+      animation: rotate 20s infinite linear forwards;
+    }
+    .pause {
+      animation-play-state: paused;
     }
     @keyframes rotate {
       0% {
