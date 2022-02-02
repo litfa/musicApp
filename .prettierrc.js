@@ -1,7 +1,7 @@
 /**
  * @Author: litfa
  * @Date: 2022-01-26 16:36:11
- * @LastEditTime: 2022-01-26 19:22:55
+ * @LastEditTime: 2022-01-29 20:26:52
  * @LastEditors: litfa
  * @Description: 
  * @FilePath: /music-app/.prettierrc.js
@@ -14,7 +14,7 @@ module.exports = {
   // 设置编辑器每一个水平缩进的空格数
   tabWidth: 2,
   // 在句尾添加分号
-  // semi: true,
+  semi: false,
   // 使用单引号
   singleQuote: true,
   jsxSingleQuote: true,

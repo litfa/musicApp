@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "serve:dev": "code . | wt -d ./ | D:\\App\\微信web开发者工具\\微信开发者工具.exe |  yarn dev:mp-weixin",
     "serve": "npm run dev:h5",
     "build": "npm run build:h5",
     "build:app-plus": "cross-env NODE_ENV=production UNI_PLATFORM=app-plus vue-cli-service uni-build",
