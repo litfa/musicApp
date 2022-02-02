@@ -1,7 +1,7 @@
 /**
  * @Author: litfa
  * @Date: 2022-01-19 19:19:53
- * @LastEditTime: 2022-01-23 16:50:54
+ * @LastEditTime: 2022-01-30 14:20:37
  * @LastEditors: litfa
  * @Description: main
  * @FilePath: /music-app/src/main.js
@@ -39,3 +39,4 @@ const app = new Vue({
   ...App
 })
 app.$mount()
+export default app

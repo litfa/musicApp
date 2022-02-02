@@ -1,7 +1,7 @@
 <!--
  * @Author: litfaaaa
  * @Date: 2022-01-26 16:55:53
- * @LastEditTime: 2022-01-27 10:41:17
+ * @LastEditTime: 2022-01-31 17:11:48
  * @LastEditors: litfa
  * @Description: 搜索输入框
  * @FilePath: /music-app/src/components/search-input/search-input.vue
@@ -11,42 +11,55 @@
   <div class="search-input">
     <div class="input">
       <!-- 输入框 -->
-      <input type="text" v-model="valueKey">
+      <input type="text" v-model="keywords"
+        confirm-type="search" @confirm="search" />
       <!-- 叉号 清除按钮 有内容时显示 -->
       <!-- uniapp 的 v-show 有问题？ v-if 正常 v-show 无效果 -->
-      <div class="clearValue" v-if="valueKey"
-        @click.stop="clearValue">
-        ×
-      </div>
+      <div class="clearValue" v-if="keywords"
+        @click.stop="clearValue">×</div>
     </div>
     <div @click="cancel">取消</div>
-
   </div>
 </template>
 
 <script>
 export default {
-  props: {},
+  props: {
+    keyValue: {
+      type: String,
+    },
+  },
   data: () => ({
-    valueKey: 'test',
+    keywords: '孤勇者',
   }),
   computed: {},
   methods: {
     cancel() {
-      console.log('back')
+      // console.log('back')
       uni.navigateBack({
-        url: '/pages/index/index'
+        url: '/pages/index/index',
       })
     },
     clearValue() {
       console.log('clear')
-      this.valueKey = ''
-    }
+      this.keywords = ''
+    },
+    editValue() {
+      this.$emit('editValue', this.keywords)
+    },
+    search() {
+      console.log('key')
+      uni.redirectTo({
+        url: `/subpkg/search-results/search-results?keywords=${this.keywords}`,
+      })
+    },
   },
   watch: {},
 
   // 组件周期函数--监听组件挂载完毕
-  mounted() {},
+  mounted() {
+    this.keywords = this.keyValue
+  },
   // 组件周期函数--监听组件数据更新之前
   beforeUpdate() {},
   // 组件周期函数--监听组件数据更新之后

@@ -56,6 +56,13 @@
 					"style": {
 						"navigationBarTitleText": "search-results"
 					}
+				},
+				{
+					"path": "music-details/music-details",
+					"style": {
+						"navigationBarTitleText": "",
+						"backgroundColor": "#f2f3f7"
+					}
 				}
 			]
 		}

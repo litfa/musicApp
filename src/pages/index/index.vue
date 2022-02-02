@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-19 19:19:53
- * @LastEditTime: 2022-01-27 10:49:14
+ * @LastEditTime: 2022-01-30 21:09:46
  * @LastEditors: litfa
  * @Description: 首页
  * @FilePath: /music-app/src/pages/index/index.vue
@@ -12,6 +12,7 @@
     <top-bar></top-bar>
     <index-cards></index-cards>
     <tab-bar></tab-bar>
+    <tabbar-music></tabbar-music>
   </div>
 </template>
 
