@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-30 21:06:59
- * @LastEditTime: 2022-01-31 17:08:08
+ * @LastEditTime: 2022-02-03 13:47:15
  * @LastEditors: litfa
  * @Description: 底部栏音乐图标
  * @FilePath: /music-app/src/components/tabbar-music/tabbar-music.vue
@@ -10,7 +10,7 @@
 <template>
   <div class="tabbar-music" @click="openMusicDetails">
     <image :src="audio.musicList[audio.index].picUrl"
-      mode="widthFix" />
+      mode="widthFix" :class="playing ? '' : 'pause'" />
   </div>
 </template>
 
@@ -23,6 +23,9 @@ export default {
   }),
   computed: {
     ...mapState(['audio']),
+    playing() {
+      return this.audio.playing
+    },
   },
   methods: {
     openMusicDetails() {
@@ -64,6 +67,18 @@ export default {
   image {
     width: 100%;
     height: 100%;
+    animation: rotate 20s infinite linear forwards;
+  }
+  .pause {
+    animation-play-state: paused;
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
 </style>
