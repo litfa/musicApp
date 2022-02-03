@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-29 20:51:35
- * @LastEditTime: 2022-01-31 17:57:31
+ * @LastEditTime: 2022-02-03 13:56:32
  * @LastEditors: litfa
  * @Description: 音乐
  * @FilePath: /music-app/src/components/music-item/music-item.vue
@@ -46,13 +46,14 @@ export default {
   computed: {},
   methods: {
     async play() {
-      const src = await this.getAudioSrc()
+      const { src, size } = await this.getAudioSrc()
       console.log(src)
       musicContext.playMusic({
         src,
         picUrl: this.picUrl,
         name: this.name,
         author: this.author,
+        duration: size,
       })
       // const innerAudioContext = uni.createInnerAudioContext()
       // innerAudioContext.autoplay = true
@@ -68,7 +69,10 @@ export default {
     },
     async getAudioSrc() {
       const { data: res } = await songUrl(this.musicId)
-      return res.data[0].url
+      return {
+        src: res.data[0].url,
+        size: res.data[0].size,
+      }
     },
   },
   watch: {},

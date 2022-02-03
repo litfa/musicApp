@@ -1,7 +1,7 @@
 /**
  * @Author: litfa
  * @Date: 2022-01-30 13:59:07
- * @LastEditTime: 2022-02-02 17:20:18
+ * @LastEditTime: 2022-02-03 13:58:15
  * @LastEditors: litfa
  * @Description: 音乐控制组件
  * @FilePath: /music-app/src/utils/music.js
@@ -29,6 +29,8 @@ const reSetMusicContext = () => {
   state.audio.playing = true
   // 音频路径
   const src = state.audio.musicList[state.audio.index]?.src
+  // 设置音乐总长度
+  state.audio.duration = state.audio.musicList[state.audio.index]?.duration
   /**
    * 向 vuex 传递数据
    */
@@ -38,9 +40,10 @@ const reSetMusicContext = () => {
   // 播放状态
   state.audio.musicContext.onPlay(() => {
     console.log('onPlay')
+
   })
   state.audio.musicContext.onCanplay(() => {
-    state.audio.duration = state.audio.musicContext.duration
+    // state.audio.duration = state.audio.musicContext.duration
   })
 
   // 进度条更新
