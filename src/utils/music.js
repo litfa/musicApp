@@ -1,7 +1,7 @@
 /**
  * @Author: litfa
  * @Date: 2022-01-30 13:59:07
- * @LastEditTime: 2022-02-03 14:31:13
+ * @LastEditTime: 2022-02-03 17:03:18
  * @LastEditors: litfa
  * @Description: 音乐控制组件
  * @FilePath: /music-app/src/utils/music.js
@@ -9,11 +9,6 @@
  */
 
 import vue from '@/main.js'
-
-// console.log(_vue)
-// _vue.$store.state
-// $store.state\
-console.log(vue)
 
 const { state } = vue.$store
 
@@ -48,56 +43,64 @@ const reSetMusicContext = () => {
 
 }
 
-/**
- * 向播放列表添加音乐
- */
-export const addMusic = (src) => {
-  state.audio.musicList.push({
-    status: 1,
-    src: 'https://webfs.ali.kugou.com/202201301349/190af852b84b8b4e422003b444a1eda5/KGTX/CLTX001/f2e7e2ea86744b6511963a069c7ccb19.mp3'
-  })
-  reSetMusicContext()
-}
-/**
- * 立即播放歌曲
- * 从当前位置添加， 并切换到该音乐
- */
-export const playMusic = (data) => {
-  // 向列表添加数据
-  state.audio.musicList.push(data)
-  // 增加索引
-  state.audio.index++
-  // 重置实例
-  reSetMusicContext()
-  console.log(state.audio.musicList)
+export default {
 
-}
+  /**
+   * 向播放列表添加音乐
+   */
+  addMusic: (src) => {
+    state.audio.musicList.push({
+      status: 1,
+      src: 'https://webfs.ali.kugou.com/202201301349/190af852b84b8b4e422003b444a1eda5/KGTX/CLTX001/f2e7e2ea86744b6511963a069c7ccb19.mp3'
+    })
+    reSetMusicContext()
+  },
+  /**
+   * 立即播放歌曲
+   * 从当前位置添加， 并切换到该音乐
+   */
+  playMusic: (data) => {
+    // 向列表添加数据
+    state.audio.musicList.push(data)
+    // 增加索引
+    state.audio.index++
+    // 重置实例
+    reSetMusicContext()
+    console.log(state.audio.musicList)
 
-// 下一首播放
+  },
 
-// 删除音乐
+  // 下一首播放
 
-// 下一首
+  // 删除音乐
 
-// 上一首
+  // 下一首
 
-// 暂停
-export const pause = () => {
-  state.audio.musicContext.pause()
-  state.audio.playing = false
-}
+  // 上一首
 
-// 播放
-export const play = () => {
-  console.log('播放')
-  state.audio.musicContext.play()
-  state.audio.playing = true
-}
+  /**
+   * 暂停
+   */
+  pause: () => {
+    state.audio.musicContext.pause()
+    state.audio.playing = false
+  },
 
-/**
- * 设置音乐播放进度
- */
-export const seek = (position) => {
-  state.audio.musicContext.seek(position)
-  play()
+  /**
+   * 播放
+   */
+  play: () => {
+    console.log('播放')
+    state.audio.musicContext.play()
+    state.audio.playing = true
+  },
+
+  /**
+   * 设置音乐播放进度
+   */
+  seek: (position) => {
+    state.audio.musicContext.seek(position)
+    this.play()
+  },
+
 }

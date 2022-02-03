@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-30 15:34:35
- * @LastEditTime: 2022-02-03 14:29:33
+ * @LastEditTime: 2022-02-03 17:04:33
  * @LastEditors: litfa
  * @Description: 音乐详情页
  * @FilePath: /music-app/src/subpkg/music-details/music-details.vue
@@ -65,7 +65,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import * as musicContext from '@/utils/music.js'
+import musicContext from '@/utils/music.js'
 import dayjs from '@/utils/dayjs.min.js'
 export default {
   components: {},

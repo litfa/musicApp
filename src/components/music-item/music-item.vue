@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import * as musicContext from '@/utils/music.js'
+import musicContext from '@/utils/music.js'
 import songUrl from '@/apis/songUrl.js'
 export default {
   props: {
