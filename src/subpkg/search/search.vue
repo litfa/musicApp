@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-21 14:53:33
- * @LastEditTime: 2022-01-26 17:10:48
+ * @LastEditTime: 2022-02-03 19:43:45
  * @LastEditors: litfa
  * @Description: 搜索页面
  * @FilePath: /music-app/src/subpkg/search/search.vue
@@ -10,14 +10,22 @@
 <template>
   <div class="search">
     <search-input></search-input>
+    <tabbar-music v-if="musicList.length > 0">
+    </tabbar-music>
   </div>
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 export default {
   components: {},
   data: () => ({}),
-  computed: {},
+  computed: {
+    ...mapState(['audio']),
+    musicList() {
+      return this.audio.musicList
+    },
+  },
   methods: {},
   watch: {},
 

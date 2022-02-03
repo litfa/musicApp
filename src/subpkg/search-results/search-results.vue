@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-26 16:54:47
- * @LastEditTime: 2022-01-31 17:57:16
+ * @LastEditTime: 2022-02-03 19:46:04
  * @LastEditors: litfa
  * @Description: 搜索结果页
  * @FilePath: /music-app/src/subpkg/search-results/search-results.vue
@@ -10,30 +10,39 @@
 <template>
   <div class="search-results">
     <search-input :keyValue="keywords"></search-input>
-    <div v-for="item in musicList" :key="item.id">
+    <div v-for="item in resMusicList" :key="item.id">
       <!-- {{ item.name }} -->
       <music-item :name="item.name"
         :author="item.ar[0].name" :musicId="item.id"
         :picUrl="item.al.picUrl">
       </music-item>
     </div>
+    <tabbar-music v-if="musicList.length > 0">
+    </tabbar-music>
   </div>
 </template>
 
 <script>
 import searchMusic from '@/apis/searchMusic.js'
+import { mapState, mapMutations } from 'vuex'
+
 export default {
   components: {},
   data: () => ({
     keywords: '',
-    musicList: [],
+    resMusicList: [],
   }),
-  computed: {},
+  computed: {
+    ...mapState(['audio']),
+    musicList() {
+      return this.audio.musicList
+    },
+  },
   methods: {
     async initMusic() {
       const { data: res } = await searchMusic(this.keywords)
       console.log(res)
-      this.musicList = res.result.songs
+      this.resMusicList = res.result.songs
     },
   },
   watch: {},
