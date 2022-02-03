@@ -1,7 +1,7 @@
 /**
  * @Author: litfa
  * @Date: 2022-01-30 13:59:07
- * @LastEditTime: 2022-02-03 13:58:15
+ * @LastEditTime: 2022-02-03 14:31:13
  * @LastEditors: litfa
  * @Description: 音乐控制组件
  * @FilePath: /music-app/src/utils/music.js
@@ -23,27 +23,22 @@ const reSetMusicContext = () => {
   if (state.audio.musicContext.destroy) state.audio.musicContext.destroy()
   // 创建实例
   state.audio.musicContext = uni.createInnerAudioContext()
-  // // 自动播放
-  // state.audio.musicContext.autoplay = true
-  state.audio.musicContext.play()
-  state.audio.playing = true
-  // 音频路径
-  const src = state.audio.musicList[state.audio.index]?.src
   // 设置音乐总长度
   state.audio.duration = state.audio.musicList[state.audio.index]?.duration
+  // 获取音频路径
+  const src = state.audio.musicList[state.audio.index]?.src
+  // 音设置频路径
+  state.audio.musicContext.src = src
+  // 播放
+  state.audio.musicContext.play()
+  state.audio.playing = true
   /**
    * 向 vuex 传递数据
    */
-  // 音频链接
-  state.audio.musicContext.src = src
-  // 音频总长度
   // 播放状态
   state.audio.musicContext.onPlay(() => {
     console.log('onPlay')
 
-  })
-  state.audio.musicContext.onCanplay(() => {
-    // state.audio.duration = state.audio.musicContext.duration
   })
 
   // 进度条更新
@@ -104,4 +99,5 @@ export const play = () => {
  */
 export const seek = (position) => {
   state.audio.musicContext.seek(position)
+  play()
 }

@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-30 15:34:35
- * @LastEditTime: 2022-02-02 17:40:10
+ * @LastEditTime: 2022-02-03 14:29:33
  * @LastEditors: litfa
  * @Description: 音乐详情页
  * @FilePath: /music-app/src/subpkg/music-details/music-details.vue
@@ -35,8 +35,8 @@
         </u-slider>
       </div>
       <div class="time">
-        <span class="now">{{progress || '0:00'}}</span>
-        <span class="max">{{duration || '0:00'}}</span>
+        <span class="now">{{viewProgress || '0:00'}}</span>
+        <span class="max">{{viewDuration || '0:00'}}</span>
       </div>
     </div>
     <div class="playButton">
@@ -66,6 +66,7 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 import * as musicContext from '@/utils/music.js'
+import dayjs from '@/utils/dayjs.min.js'
 export default {
   components: {},
   data: () => ({
@@ -89,13 +90,25 @@ export default {
     playing() {
       return this.audio.playing
     },
-    // 音乐总长度
+    // 音乐总长度 (秒)
     duration() {
-      return this.audio.duration
+      return this.audio.duration / 1000
     },
-    // 播放进度
+    // 音乐总长度 (格式化后)
+    viewDuration() {
+      return dayjs(this.audio.duration).format('mm:ss')
+    },
+
+    // 播放进度 （秒）
     progress() {
+      // 当前进度
       return this.audio.progress
+    },
+    // 播放进度 （格式化后）
+    viewProgress() {
+      // 当前进度
+      const progress = this.audio.progress
+      return dayjs(progress * 1000).format('mm:ss')
     },
   },
   watch: {
