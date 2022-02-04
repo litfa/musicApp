@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-26 16:54:47
- * @LastEditTime: 2022-02-03 19:46:04
+ * @LastEditTime: 2022-02-04 20:05:07
  * @LastEditors: litfa
  * @Description: 搜索结果页
  * @FilePath: /music-app/src/subpkg/search-results/search-results.vue
@@ -9,7 +9,8 @@
 -->
 <template>
   <div class="search-results">
-    <search-input :keyValue="keywords"></search-input>
+    <search-input :keyValue="keywords" disable>
+    </search-input>
     <div v-for="item in resMusicList" :key="item.id">
       <!-- {{ item.name }} -->
       <music-item :name="item.name"
