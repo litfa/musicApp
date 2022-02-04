@@ -1,7 +1,7 @@
 <!--
  * @Author: litfaaaa
  * @Date: 2022-01-26 16:55:53
- * @LastEditTime: 2022-02-04 21:11:44
+ * @LastEditTime: 2022-02-04 21:23:12
  * @LastEditors: litfa
  * @Description: 搜索输入框
  * @FilePath: /music-app/src/components/search-input/search-input.vue
@@ -14,7 +14,8 @@
     <div class="input">
       <!-- 输入框 -->
       <input type="text" v-model="keywords"
-        confirm-type="search" @confirm="search(keywords)" />
+        confirm-type="search" @confirm="search(keywords)"
+        :auto-focus="disable ? false: true" />
       <!-- 叉号 清除按钮 有内容时显示 -->
       <!-- uniapp 的 v-show 有问题？ v-if 正常 v-show 无效果 -->
       <div class="clearValue" v-if="keywords"
