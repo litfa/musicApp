@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-29 20:51:35
- * @LastEditTime: 2022-02-03 13:56:32
+ * @LastEditTime: 2022-02-04 12:24:10
  * @LastEditors: litfa
  * @Description: 音乐
  * @FilePath: /music-app/src/components/music-item/music-item.vue
@@ -53,7 +53,7 @@ export default {
         picUrl: this.picUrl,
         name: this.name,
         author: this.author,
-        duration: size,
+        // duration: size/2,
       })
       // const innerAudioContext = uni.createInnerAudioContext()
       // innerAudioContext.autoplay = true

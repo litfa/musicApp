@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-30 15:34:35
- * @LastEditTime: 2022-02-03 17:04:33
+ * @LastEditTime: 2022-02-04 12:57:48
  * @LastEditors: litfa
  * @Description: 音乐详情页
  * @FilePath: /music-app/src/subpkg/music-details/music-details.vue
@@ -31,16 +31,18 @@
     <div class="box"></div>
     <div class="progressBar">
       <div class="bar">
-        <u-slider v-model="value" @input="change">
+        <u-slider v-model="value" @input="change"
+          :max="duration">
         </u-slider>
       </div>
       <div class="time">
         <span class="now">{{viewProgress || '0:00'}}</span>
-        <span class="max">{{viewDuration || '0:00'}}</span>
+        <span class="max">{{viewDuration || '0:00'}}
+          {{duration}}</span>
       </div>
     </div>
     <div class="playButton">
-      <div class="prev">
+      <div class="prev" @click="prev">
         <u-icon name="skip-back-left" color="#8a8c91"
           size="25" bold>
         </u-icon>
@@ -53,7 +55,7 @@
           v-if="playing" @click="pause">
         </u-icon>
       </div>
-      <div class="next">
+      <div class="next" @click="next">
         <u-icon name="skip-forward-right" color="#8a8c91"
           size="25" bold>
         </u-icon>
@@ -92,11 +94,13 @@ export default {
     },
     // 音乐总长度 (秒)
     duration() {
-      return this.audio.duration / 1000
+      // console.log(this.audio.duration / 1000)
+      return this.audio.duration
     },
     // 音乐总长度 (格式化后)
     viewDuration() {
-      return dayjs(this.audio.duration).format('mm:ss')
+      console.log(this.audio.duration * 1000)
+      return dayjs(this.audio.duration * 1000).format('mm:ss')
     },
 
     // 播放进度 （秒）
@@ -133,6 +137,12 @@ export default {
     },
     play() {
       musicContext.play()
+    },
+    next() {
+      musicContext.next()
+    },
+    prev() {
+      musicContext.prev()
     },
     exit() {
       uni.navigateBack()
