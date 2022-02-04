@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-29 20:51:35
- * @LastEditTime: 2022-02-04 12:24:10
+ * @LastEditTime: 2022-02-04 18:11:59
  * @LastEditors: litfa
  * @Description: 音乐
  * @FilePath: /music-app/src/components/music-item/music-item.vue
@@ -53,19 +53,7 @@ export default {
         picUrl: this.picUrl,
         name: this.name,
         author: this.author,
-        // duration: size/2,
       })
-      // const innerAudioContext = uni.createInnerAudioContext()
-      // innerAudioContext.autoplay = true
-      // innerAudioContext.src =
-      //   'https://webfs.ali.kugou.com/202201301349/190af852b84b8b4e422003b444a1eda5/KGTX/CLTX001/f2e7e2ea86744b6511963a069c7ccb19.mp3'
-      // innerAudioContext.onPlay(() => {
-      //   console.log('开始播放')
-      // })
-      // innerAudioContext.onError((res) => {
-      //   console.log(res.errMsg)
-      //   console.log(res.errCode)
-      // })
     },
     async getAudioSrc() {
       const { data: res } = await songUrl(this.musicId)

@@ -1,7 +1,7 @@
 /**
  * @Author: litfa
  * @Date: 2022-01-30 13:59:07
- * @LastEditTime: 2022-02-04 13:07:08
+ * @LastEditTime: 2022-02-04 18:12:11
  * @LastEditors: litfa
  * @Description: 音乐控制组件
  * @FilePath: /music-app/src/utils/music.js
@@ -47,13 +47,11 @@ export default {
 
     // 进度条更新
     state.audio.musicContext.onTimeUpdate(() => {
-      // state.audio.duration = state.audio.musicContext.duration
       state.audio.progress = state.audio.musicContext.currentTime
     })
     state.audio.musicContext.onCanplay(() => {
       console.log('onCanplay')
       state.audio.duration = state.audio.musicContext.duration
-      // state.audio.progress = state.audio.musicContext.currentTime
       function getDuration () {
         setTimeout(() => {
           console.log('can', state.audio.musicContext.duration)

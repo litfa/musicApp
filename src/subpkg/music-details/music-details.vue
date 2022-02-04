@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-30 15:34:35
- * @LastEditTime: 2022-02-04 12:57:48
+ * @LastEditTime: 2022-02-04 18:11:22
  * @LastEditors: litfa
  * @Description: 音乐详情页
  * @FilePath: /music-app/src/subpkg/music-details/music-details.vue
@@ -38,7 +38,7 @@
       <div class="time">
         <span class="now">{{viewProgress || '0:00'}}</span>
         <span class="max">{{viewDuration || '0:00'}}
-          {{duration}}</span>
+        </span>
       </div>
     </div>
     <div class="playButton">
