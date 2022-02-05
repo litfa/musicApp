@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-23 15:24:54
- * @LastEditTime: 2022-01-23 18:12:15
+ * @LastEditTime: 2022-02-05 13:40:42
  * @LastEditors: litfa
  * @Description: 我的
  * @FilePath: /music-app/src/pages/my/my.vue
@@ -9,6 +9,11 @@
 -->
 <template>
   <div class="my">
+    <div class="codeing">
+      <image src="./../../static/image/codeing.png"
+        mode="widthFix" />
+      开发中...
+    </div>
     <tab-bar></tab-bar>
   </div>
 </template>
@@ -44,4 +49,18 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="less" scoped>
+.codeing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 60rpx;
+  font-weight: bold;
+  color: #515151;
+  margin-top: 20%;
+  image {
+    width: 50%;
+  }
+}
+</style>
