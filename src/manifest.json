@@ -63,6 +63,7 @@
 		"usingComponents": true
 	},
 	"mp-qq": {
+		"appid": "1112177074",
 		"usingComponents": true
 	}
 }
