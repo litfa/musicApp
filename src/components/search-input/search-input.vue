@@ -1,7 +1,7 @@
 <!--
  * @Author: litfaaaa
  * @Date: 2022-01-26 16:55:53
- * @LastEditTime: 2022-02-04 21:23:12
+ * @LastEditTime: 2022-02-04 21:26:10
  * @LastEditors: litfa
  * @Description: 搜索输入框
  * @FilePath: /music-app/src/components/search-input/search-input.vue
@@ -94,7 +94,11 @@ export default {
     search(keywords) {
       console.log(keywords)
       console.log('this.keywords', this.keywords)
-      if (!keywords) keywords = this.keywords
+      if (!keywords) {
+        keywords = this.keywords
+      } else {
+        this.keywords = keywords
+      }
       uni.navigateTo({
         url: `/subpkg/search-results/search-results?keywords=${keywords}`,
       })
