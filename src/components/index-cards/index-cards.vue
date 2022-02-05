@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-22 15:57:02
- * @LastEditTime: 2022-01-27 10:47:23
+ * @LastEditTime: 2022-02-05 12:43:19
  * @LastEditors: litfa
  * @Description: 所有卡片（在这里请求遍历）
  * @FilePath: /music-app/src/components/index-cards/index-cards.vue
@@ -14,7 +14,7 @@
       :blurPicUrl="newMusic[0].album.blurPicUrl">
       <div class="musics">
         <div class="item" v-for="item in newMusic"
-          :key="item.id">
+          :key="item.id" @click="playMusic(item)">
           <image :src="item.album.blurPicUrl"
             mode="widthFix" />
           <span class="name">{{ item.name }}</span>
@@ -33,7 +33,7 @@
       :blurPicUrl="hotMusic[1].al.picUrl">
       <div class="hotMusic">
         <div class="item" v-for="item in hotMusic"
-          :key="item.id">
+          :key="item.id" @click="playMusic(item)">
           <image :src="item.al.picUrl" mode="heightFix" />
           <div class="info">
             <span class="name">{{ item.name }}</span>
@@ -50,6 +50,8 @@
 <script>
 import newMusic from '@/apis/newMusic.js'
 import hotMusic from '@/apis/hotMusic.js'
+import songUrl from '@/apis/songUrl.js'
+import musicContext from '@/utils/music.js'
 export default {
   props: {},
   data: () => ({
@@ -80,6 +82,27 @@ export default {
       const musicList = res.playlist.tracks
       musicList.splice(3, musicList.length)
       this.hotMusic = musicList
+    },
+    async getAudioSrc(musicId) {
+      const { data: res } = await songUrl(musicId)
+      return {
+        src: res.data[0].url,
+        size: res.data[0].size,
+      }
+    },
+    async playMusic(e) {
+      const { src, size } = await this.getAudioSrc(e.id)
+      console.log(src)
+      console.log(e)
+      let author = ''
+      if (e.ar && e.ar[0]?.name) author = e.ar[0]?.name
+      if (e.artists && e.artists[0]?.name) author = e.artists[0]?.name
+      musicContext.playMusic({
+        src,
+        picUrl: e.al?.picUrl || e.album?.picUrl,
+        name: e.name,
+        author,
+      })
     },
   },
 
