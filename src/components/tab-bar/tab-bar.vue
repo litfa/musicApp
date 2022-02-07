@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-23 15:48:35
- * @LastEditTime: 2022-01-23 18:46:49
+ * @LastEditTime: 2022-02-05 17:08:49
  * @LastEditors: litfa
  * @Description:
  * @FilePath: /music-app/src/components/tab-bar/tab-bar.vue
@@ -10,12 +10,20 @@
 
 <template>
   <div class="tab-bar">
-    <div class="tab" :class="tabBar.now == 0 ? 'selected' : ''" @click="switchTab(list[0].pagePath, 0)">
-      <image :src="require(`@/static/tabbar-icon/index${tabBar.now == 0 ? '-1' : ''}.png`)" mode="widthFix" />
+    <div class="tab"
+      :class="tabBar.now == 0 ? 'selected' : ''"
+      @click="switchTab(list[0].pagePath, 0)">
+      <image
+        :src="require(`@/static/tabbar-icon/index${tabBar.now == 0 ? '-1' : ''}.png`)"
+        mode="widthFix" />
       <span>发现</span>
     </div>
-    <div class="tab" :class="tabBar.now == 1 ? 'selected' : ''" @click="switchTab(list[1].pagePath, 1)">
-      <image :src="require(`@/static/tabbar-icon/my${tabBar.now == 1 ? '-1' : ''}.png`)" mode="widthFix" />
+    <div class="tab"
+      :class="tabBar.now == 1 ? 'selected' : ''"
+      @click="switchTab(list[1].pagePath, 1)">
+      <image
+        :src="require(`@/static/tabbar-icon/my${tabBar.now == 1 ? '-1' : ''}.png`)"
+        mode="widthFix" />
       <span>我的</span>
     </div>
   </div>
@@ -106,8 +114,8 @@ export default {
   .selected span {
     color: #000;
   }
-  .tab[selected='true'] span {
-    color: #000;
-  }
+  // .tab[selected='true'] span {
+  //   color: #000;
+  // }
 }
 </style>

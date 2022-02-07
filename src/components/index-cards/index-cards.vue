@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-01-22 15:57:02
- * @LastEditTime: 2022-02-05 12:43:19
+ * @LastEditTime: 2022-02-07 14:34:26
  * @LastEditors: litfa
  * @Description: 所有卡片（在这里请求遍历）
  * @FilePath: /music-app/src/components/index-cards/index-cards.vue
@@ -34,7 +34,12 @@
       <div class="hotMusic">
         <div class="item" v-for="item in hotMusic"
           :key="item.id" @click="playMusic(item)">
+          <!-- #ifdef MP-QQ -->
+          <image :src="item.al.picUrl" mode="aspectFit" />
+          <!-- #endif -->
+          <!-- #ifndef MP-QQ -->
           <image :src="item.al.picUrl" mode="heightFix" />
+          <!-- #endif -->
           <div class="info">
             <span class="name">{{ item.name }}</span>
             <span></span>
@@ -162,6 +167,10 @@ export default {
       align-items: center;
       image {
         height: 100%;
+        // #ifdef MP-QQ
+        height: 120rpx;
+        width: 120rpx;
+        // #endif
         flex-shrink: 0;
         border-radius: 15rpx;
         margin-right: 30rpx;
